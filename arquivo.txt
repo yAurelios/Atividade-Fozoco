@@ -1,0 +1,32 @@
+ <!-- Cards -->
+    <section class="container mt-4">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Produto 1</h5>
+                        <p class="card-text">Descrição do produto 1.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Produto 2</h5>
+                        <p class="card-text">Descrição do produto 2.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Produto 3</h5>
+                        <p class="card-text">Descrição do produto 3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

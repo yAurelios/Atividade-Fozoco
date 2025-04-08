@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Roupas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* section, header, footer, .modal-content, .card {
+            border: 1px solid red;
+        } */
+
+        @media (max-width: 768px) {
+            body {
+                background-color: #f8f9fa;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+            body {
+                background-color: #e9ecef;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            body {
+                background-color: #dee2e6;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-lg fixed-top" style="background-color: #4a4a4a; height: 70px;">
+        <div class="container-fluid position-relative">
+
+            <!-- Links à esquerda com margem -->
+            <div class="d-flex align-items-center ms-4" style="position: absolute; left: 0;">
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item me-3">
+                        <a class="nav-link text-white" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Produtos</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Logo centralizada na tela -->
+            <a class="navbar-brand position-absolute top-50 start-50 translate-middle" href="#"
+                style="color: #ff4d4d; font-weight: bold; font-size: 2rem;">
+                Amon & Isis
+            </a>
+
+            <!-- Login à direita com margem -->
+            <div class="d-flex align-items-center me-4" style="position: absolute; right: 0;">
+                <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Login
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Espaço para o conteúdo -->
+    <div style="padding-top: 80px;"></div>
+
+
+
+
+    <!-- Modal Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrossel -->
+    <section class="container mt-4">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+            <!-- Indicadores (bolinhas) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner position-relative">
+                <!-- Fundo com blur cobrindo tudo -->
+                <div class="position-absolute top-0 start-0 w-100 h-100"
+                    style="backdrop-filter: blur(2px); background-color: rgba(0,0,0,0.4); z-index: 1;"></div>
+
+                <div class="carousel-item active">
+                    <img src="/img/carrossel1.png" class="d-block w-100" alt="Banner 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/carrossel2.png" class="d-block w-100" alt="Banner 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/carrossel3.png" class="d-block w-100" alt="Banner 3">
+                </div>
+
+                <!-- Texto centralizado -->
+                <div class="position-absolute top-50 start-50 translate-middle text-white text-center"
+                    style="z-index: 2;">
+                    <h2 style="font-family: Arial, sans-serif; font-size: 2rem; font-weight: bold;">
+                        Amon & Isis, roupas para casais
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="container mt-4">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="/img/card1.png" class="card-img-top" alt="Produto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Produto 1</h5>
+                        <p class="card-text">Descrição do produto 1.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="/img/card2.png" class="card-img-top" alt="Produto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Produto 2</h5>
+                        <p class="card-text">Descrição do produto 2.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="/img/card3.png" class="card-img-top" alt="Produto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Produto 3</h5>
+                        <p class="card-text">Descrição do produto 3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Texto + Imagem -->
+    <section class="container mt-4 text-center">
+        <h2>Sobre a nossa loja</h2>
+        <p>Somos especializados em roupas modernas e de qualidade para todos os estilos.</p>
+        <img src="https://via.placeholder.com/800x300" class="img-fluid" alt="Sobre nós">
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3 mt-4">
+        <p>&copy; 2025 Amon & Isis - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
