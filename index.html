@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja de Roupas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- PUTA QUE PARIU 1 HORA PRA ENTENDER QUE PRECISAVA DE UMA BIBLIOTECA DE ICONES AAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -68,17 +70,12 @@
         </div>
     </header>
 
-    <!-- Espaço para o conteúdo -->
-    <div style="padding-top: 80px;"></div>
-
-
-
-
     <!-- Modal Login -->
     <div class="modal fade" id="loginModal" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content bg-secondary-subtle"> <!-- Fundo cinza -->
                 <div class="modal-header">
+                    <!-- estou maluco, porque bootstrap é tão confuso e quebrado? -->
                     <h5 class="modal-title">Login</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
@@ -92,17 +89,42 @@
                             <label for="senha" class="form-label">Senha</label>
                             <input type="password" class="form-control" id="senha">
                         </div>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
+
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
+
+                        <button type="button" class="btn btn-outline-dark w-100 mb-2">
+                            <i class="bi bi-google me-2"></i> Entrar com Google
+                        </button>
+
+                        <button type="button" class="btn btn-outline-dark w-100 mb-3">
+                            <i class="bi bi-facebook me-2"></i> Entrar com Facebook
+                        </button>
+
+                        <div class="text-center">
+                            <small>
+                                Ainda não é registrado? <a href="#">Registre-se aqui</a>
+                            </small>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Carrossel -->
-    <section class="container mt-4">
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-            <!-- Indicadores (bolinhas) -->
+
+    <!-- TopBanner com Carrossel- pós Modal pois modal e oculto-->
+    <section class="py-5 mt-5 text-center bg-secondary-subtle position-relative">
+        <div class="container py-5 position-relative z-2">
+            <h1 class="display-4 fw-bold text-white">Vista-se com Estilo</h1>
+            <p class="lead text-white">Moda minimalista, elegante e atemporal para casais.</p>
+            <a href="#" class="btn btn-dark rounded-pill px-4 py-2 text-uppercase fw-bold">Conheça</a>
+        </div>
+
+        <!-- Carrossel dentro do TopBanner -->
+        <div id="carouselExample" class="carousel slide position-absolute top-0 start-0 w-100 h-100"
+            data-bs-ride="carousel" data-bs-interval="2000">
+
+            <!-- Indicadores (tracinhos) -->
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -112,30 +134,31 @@
                     aria-label="Slide 3"></button>
             </div>
 
-            <div class="carousel-inner position-relative">
-                <!-- Fundo com blur cobrindo tudo -->
+            <div class="carousel-inner w-100 h-100">
+
+                <!-- Fundo com o blur cobrindo tudo -->
                 <div class="position-absolute top-0 start-0 w-100 h-100"
                     style="backdrop-filter: blur(2px); background-color: rgba(0,0,0,0.4); z-index: 1;"></div>
 
-                <div class="carousel-item active">
-                    <img src="/img/carrossel1.png" class="d-block w-100" alt="Banner 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="/img/carrossel2.png" class="d-block w-100" alt="Banner 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="/img/carrossel3.png" class="d-block w-100" alt="Banner 3">
-                </div>
 
-                <!-- Texto centralizado -->
-                <div class="position-absolute top-50 start-50 translate-middle text-white text-center"
-                    style="z-index: 2;">
-                    <h2 style="font-family: Arial, sans-serif; font-size: 2rem; font-weight: bold;">
-                        Amon & Isis, roupas para casais
-                    </h2>
+                    <!-- essas imagens foram pegadas da internet, porém editadas e cortadas por mim no figma :D <3 -->
+                <div class="carousel-item active">
+                    <img src="/img/carrossel1.png" class="d-block w-100 h-100 object-fit-cover" alt="Banner 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/carrossel2.png" class="d-block w-100 h-100 object-fit-cover" alt="Banner 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/carrossel3.png" class="d-block w-100 h-100 object-fit-cover" alt="Banner 3">
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Texto -->
+    <section class="container mt-4 text-center">
+        <h2>Confira itens do nosso vestuário!</h2>
+        <p>Somos especializados em roupas modernas e de qualidade para casais.</p>
     </section>
 
     <!-- Cards -->
@@ -145,8 +168,15 @@
                 <div class="card">
                     <img src="/img/card1.png" class="card-img-top" alt="Produto 1">
                     <div class="card-body">
-                        <h5 class="card-title">Produto 1</h5>
-                        <p class="card-text">Descrição do produto 1.</p>
+                        <h5 class="card-title">Rei e Rainha - Conjunto</h5>
+                        <p class="card-text">🔥 Um conjunto de pijama para casais que são como rei e rainha na cama!</p>
+                        <!-- Botão de comprar e carrinho -->
+                        <div class="mt-auto d-flex justify-content-center gap-2">
+                            <a href="#" class="btn btn-dark">Comprar</a>
+                            <a href="#" class="btn btn-outline-dark">
+                                <i class="bi bi-cart"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,8 +184,16 @@
                 <div class="card">
                     <img src="/img/card2.png" class="card-img-top" alt="Produto 2">
                     <div class="card-body">
-                        <h5 class="card-title">Produto 2</h5>
-                        <p class="card-text">Descrição do produto 2.</p>
+                        <h5 class="card-title">Moletons Tom e Jerry</h5>
+                        <p class="card-text">😍 Procura moletons para casais fanáticos um pelo outro? Então é isso que
+                            você QUER!</p>
+                        <!-- Botão de comprar e carrinho -->
+                        <div class="mt-auto d-flex justify-content-center gap-2">
+                            <a href="#" class="btn btn-dark">Comprar</a>
+                            <a href="#" class="btn btn-outline-dark">
+                                <i class="bi bi-cart"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -163,8 +201,16 @@
                 <div class="card">
                     <img src="/img/card3.png" class="card-img-top" alt="Produto 3">
                     <div class="card-body">
-                        <h5 class="card-title">Produto 3</h5>
-                        <p class="card-text">Descrição do produto 3.</p>
+                        <h5 class="card-title">Agasalhos McQueen e Sally</h5>
+                        <p class="card-text">🥵 Quer deixar seu relacionamento mais potente? Esses agasalhos é o que
+                            procura!</p>
+                        <!-- Botão de comprar e carrinho -->
+                        <div class="mt-auto d-flex justify-content-center gap-2">
+                            <a href="#" class="btn btn-dark">Comprar</a>
+                            <a href="#" class="btn btn-outline-dark">
+                                <i class="bi bi-cart"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -173,9 +219,7 @@
 
     <!-- Texto + Imagem -->
     <section class="container mt-4 text-center">
-        <h2>Sobre a nossa loja</h2>
-        <p>Somos especializados em roupas modernas e de qualidade para todos os estilos.</p>
-        <img src="https://via.placeholder.com/800x300" class="img-fluid" alt="Sobre nós">
+        <img src="/img/banner.png" class="img-fluid" alt="Sobre nós">
     </section>
 
     <!-- Footer -->
@@ -187,3 +231,9 @@
 </body>
 
 </html>
+
+
+<!-- querido professor, peço que ignore qualquer comentário que possua nesse código, tal como palavrões ou algo do tipo -->
+<!-- eu geralmente faço alternando os dias, e acho mais fácil comentar TUDO no código para eu entender depois -->
+<!-- e quanto a palavrões é mais porque, MEU DEUS, porque o bootstrap dificulta TANTO ao explicar que ele precisa de um link -->
+<!-- da sua PRÓPRIA biblioteca de icones? ele simplesmente não APLICA O EFEITO/ESTILO PARA ELEMENTOS DE OUTROS ICONES!!!!!!! -->
